@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter" ng-controller="ctrl">
+  	<ion-side-menus>
+  		<ion-side-menu-content>
+	     <ion-header-bar  class="bar-positive">  
+            <button class="button button-clear" menu-toggle='left'><i class="icon ion-navigate"></i></button>		 
+	       	<h1 class="title">头部</h1>
+	     </ion-header-bar>   
+	     <ion-content class="has-tabs">
+	     	 <ion-refresher pulling-text="刷新中..." on-refresh="doRefresh()"></ion-refresher>  	
+	     	 <ion-list>
+	     	  	<ion-item ng-repeat='item in arr'>{{item}}</ion-item>	
+	     	  </ion-list>
+	     	  <ion-item ng-click="show()">点击弹出别的选择框</ion-item>
+	     	<!--  状态选中-->
+	     	  <ion-item>
+						<ion-toggle ng-model="check" ng-checked="checking(check)">{{str}}</ion-toggle>
+					</ion-item>
+					<!--长按  双击  加载-->
+					<button class="button button-assertive" on-Hold="longan()">长按</button>
+					<button class="button button-dark" on-double-tap="doubt()">双击</button>
+					<button class="button button-positive" ng-click="loads()">加载</button>
+					<!--三种弹框-->
+					<ion-item ng-click="Alert()">弹出</ion-item>
+					<ion-item ng-click="Comit()">确认</ion-item>
+					<ion-item ng-click="Jinggao()">警告</ion-item>
+					<!--上拉加载-->
+	     	<ion-infinite-scroll on-infinite="loadMore()" distance="-10%" ></ion-infinite-scroll>
+			  </ion-content>
+			 <ion-tabs class="tabs-icon-top tabs-positive">
+				<ion-tab title="首页" icon="ion-home"></ion-tab>
+				<ion-tab title="关于" icon="ion-star"></ion-tab>
+				<ion-tab title="其他" icon="ion-ios-world"></ion-tab>
+				
+			</ion-tabs>
+      </ion-side-menu-content>
+      <ion-side-menu width='200' >
+      	  <ion-item>1111</ion-item>
+      </ion-side-menu>
+  		</ion-side-menus>
+  </body>
+</html>

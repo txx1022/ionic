@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/qq.css"/>
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter" ng-controller="ctrl">
+  	<ion-side-menus>
+  		<!--头部-->
+  		<ion-side-menu-content>
+       	<div class="bar bar-header bar-positive">
+					   <img class="qq" src="img/qq.png"/>
+					  <div class="h1 title dongtai">动态</div>
+					  <button class="button button-positive more">更多</button>
+					</div>
+	     <!--身体-->
+	     <ion-content class="has-header">
+	     	 <ion-refresher pulling-text="刷新中..." on-refresh="doRefresh()"></ion-refresher>  	
+	     	  <div class="bar bar-header item-input-inset">
+					  <label class="item-input-wrapper">
+					    <i class="icon ion-ios-search placeholder-icon"></i>
+					    <input type="search" placeholder="大家都在搜：周迅素颜现身机场">
+					  </label> 
+					</div>
+					<div class="row">
+					  <div class="col">
+					  	 <a class="tab-item">
+							    <i class="icon ion-android-star-outline dongtai"></i>
+							    好友动态
+							  </a>
+					  </div>
+					  <div class="col">
+					  	<a class="tab-item">
+							    <i class="icon ion-android-pin near"></i>
+							    附近
+							  </a></div>
+					  <div class="col">
+					  	<a class="tab-item">
+							    <i class="icon ion-social-designernews int"></i>
+							    兴趣部落
+							  </a>
+					  </div>
+					</div>
+					<div class="list" style='height: 1px;'>
+						<ion-item class='item-divider'></ion-item>
+					</div>
+					 <div class="list ">
+
+						  <a href="#" class="item item-icon-left item-icon-right">
+						    <i class="icon ion-ios-game-controller-b-outline" style="color: #0062CC;font-size: 25px;"></i>
+						    游戏
+						    <i class="icon ion-ios-arrow-right right"></i>
+						  </a>
+						
+						  <a href="#" class="item item-icon-left item-icon-right">
+						    <i class="icon ion-ios-world-outline" style="color:#8A6D3B;font-size: 25px;"></i>
+						    日迹
+						    <i class="icon ion-ios-arrow-right right"></i>
+						  </a>
+						
+						  <a href="#" class="item item-icon-left item-icon-right">
+						    <i class="icon ion-ios-camera-outline" style="color: #00FF7F; font-size: 25px;"></i>
+						    看点
+						    <i class="icon ion-ios-arrow-right right"></i>
+						  </a>
+						
+						  <a href="#" class="item item-icon-left item-icon-right">
+						    <i class="icon ion-ios-briefcase" style="color: orangered; font-size: 25px;"></i>
+						    京东购物
+						    <i class="icon ion-ios-arrow-right right"></i>
+						  </a>
+						 
+						 <a href="#" class="item item-icon-left item-icon-right">
+						    <i class="icon ion-card"></i>
+						    阅读
+						    <i class="icon ion-ios-arrow-right right"></i>
+						  </a>
+						  <a href="#" class="item item-icon-left item-icon-right">
+						    <i class="icon ion-card"></i>
+						   动漫
+						   <i class="icon ion-ios-arrow-right right"></i>
+						  </a>
+						  <a href="#" class="item item-icon-left item-icon-right">
+						    <i class="icon ion-card"></i>
+						    音乐
+						    <i class="icon ion-ios-arrow-right right"></i>
+						  </a>
+						  <a href="#" class="item item-icon-left item-icon-right">
+						    <i class="icon ion-card"></i>
+						    直播
+						    <i class="icon ion-ios-arrow-right right"></i>
+						  </a>
+						  <a href="#" class="item item-icon-left item-icon-right">
+						    <i class="icon ion-card"></i>
+						    应用包
+						    <i class="icon ion-ios-arrow-right right"></i>
+						  </a>
+						  <div class="list" style='height: 1px;'>
+									<ion-item class='item-divider'></ion-item>
+							</div>
+						</div>
+					<!--上拉加载-->
+	     	<ion-infinite-scroll on-infinite="loadMore()" distance="-10%" ></ion-infinite-scroll>
+			  </ion-content>
+			 <ion-tabs class="tabs-icon-top tabs-light">
+				<ion-tab title="消息" icon="ion-ios-email-outline"></ion-tab>
+				<ion-tab title="联系人" icon="ion-android-happy"></ion-tab>
+				<ion-tab title="动态" icon="ion-social-reddit-outline"></ion-tab>		
+			</ion-tabs>
+      </ion-side-menu-content>
+      <!--侧边框-->
+      <ion-side-menu width='250' >
+      	<div class="tang">
+      		<div class="item item-avatar name">
+						<img src="img/qq.png">
+						<h2 class="more">糖小茜</h2>
+						<p class="love">最好的爱情就是两个人在一起，让平淡的日子发光</p>
+					</div>
+      	</div>
+      	<ion-item class='items'><i class="icon ion-social-tux side"></i>了解会员特权</ion-item>
+      	<ion-item class='items'><i class="ion-social-twitter-outline side"></i>QQ钱包</ion-item>
+      	<ion-item class='items'><i class="icon ion-ios-game-controller-b-outline side"></i>个性装扮</ion-item>
+      	<ion-item class='items'><i class="ion-ios-paper-outline side"></i>我的收藏</ion-item>
+      	<ion-item class='items'><i class="icon ion-ios-chatboxes-outline side"></i>我的相册</ion-item>
+      	<ion-item class='items'><i class="icon ion-ios-heart-outline side"></i>我的文件</ion-item>
+      	  <ion-tabs class="tabs-icon-left">
+					<ion-tab title="设置" icon="ion-ios-gear"></ion-tab>
+					<ion-tab title="夜间" icon="ion-contrast"></ion-tab>
+					<ion-tab title="郑州市"></ion-tab>		
+				</ion-tabs>
+      </ion-side-menu>
+  		</ion-side-menus>
+  </body>
+</html>

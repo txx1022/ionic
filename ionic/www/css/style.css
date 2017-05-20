@@ -1,0 +1,94 @@
+/* Empty. Add your own CSS if you like */
+.ion-log-out,.ion-ios-pricetag-outline,.ion-ios-paper-outline,.ion-ios-person{
+	font-size: 22px!important;
+	color: #000;
+}
+.tabs{
+	background-size: 100% 0;
+}
+.item-input-inset{
+	background: #387ef5;
+}
+.item-input-wrapper{
+	background: #fff;
+}
+.box{
+	height: 10rem;
+	padding: 1rem;
+}
+dl{
+	width: 25%;
+	height: 2rem;
+	float: left;
+	text-align: center;	 
+}
+ 
+dl img{
+	height: 2rem;
+	width: 2rem;
+}
+.left{
+	float: left;
+	height: 4rem;
+	width: 4rem;
+	margin-right: 0.5rem;
+}
+.left1{
+	float: left;
+}
+.right{
+	float: right;
+}
+.item-complex .item-content, .item-radio .item-content{
+	padding-right: 0.3rem;
+	padding-left: 0.2rem;
+}
+h4 span{
+	font-size: 0.1rem;
+	background: yellow;
+	margin-right: 0.4rem;
+}
+h5{
+	color: #3C3C3C;
+}
+.time{
+	border: 1px solid #0062CC;
+	width: 2.5rem;
+	color: #0062CC;
+}
+.send{
+	width: 3.5rem;
+	background: #0086B3;
+	color: #fff;
+	text-align: center;
+	border-radius: 10%;
+}
+.dl{
+	display: flex;
+	justify-content: space-around;
+}
+.tang{
+	height: 100px;
+}
+.name{
+	    position: absolute;
+    top: 50px;
+    left: 10px;
+    background: none;
+    border: none;
+}
+.love{
+	width: 150px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #fff;
+}
+.side{
+	margin-right: 10px;
+    font-size: 22px;
+}
+.items{
+	border-color: #fff;
+	padding: 7px;
+	font-size: 14px;
+}

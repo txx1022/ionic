@@ -1,0 +1,50 @@
+ *{margin: 0; padding: 0;}
+.dongtai,.more{ color: #fff; }
+.qq{
+	
+	height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: 7px;
+}
+.dongtai{
+	color: yellow;
+}
+.near{
+	color: #C9302C;
+}
+.int{
+	color: #5CB85C;
+}
+.right{
+	color: #ccc;
+}
+.tang{
+	height: 150px;
+	width: 250px;
+	background:url(../img/timg.jpg);
+	background-size: cover;
+}
+.name{
+	    position: absolute;
+    top: 50px;
+    left: 10px;
+    background: none;
+    border: none;
+}
+.love{
+	width: 150px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #fff;
+}
+.side{
+	margin-right: 10px;
+    font-size: 22px;
+}
+.items{
+	border-color: #fff;
+	padding: 7px;
+	font-size: 14px;
+}
